@@ -1,21 +1,30 @@
 import React from "react";
+import { connect } from 'react-redux';
 import CounterDisplay from "./CounterDisplay";
-class CounterContainer extends React.Component {
-  state = {
-    count: 0,
-  };
+import { increment } from '../redux/actions';
 
+class CounterContainer extends React.Component {
   async componentDidMount() {
     setInterval(() => {
-      this.setState({ count: this.state.count + 1 })
-    }, 1000);
+      this.props.incrementCounter();
+    }, 2000);
   }
   render() {
+    const { counter } = this.props;
     return (
       <div>
-        <CounterDisplay count={this.state.count} />
+        <CounterDisplay count={counter} />
       </div>
     );
   }
 }
-export default CounterContainer;
+
+const mapStateToProps = state => ({
+  counter: state.counter
+});
+
+const mapDispatchToProps = dispatch => ({
+  incrementCounter: () => dispatch(increment())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
