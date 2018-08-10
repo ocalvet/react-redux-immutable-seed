@@ -1,9 +1,11 @@
 import { createStore } from 'redux';
 import createState from './initialState';
-import reducers from './reducers';
+import createReducers from './reducers/index';
 
 export default () => {
-  console.log('Reducers', reducers);
-  const store = createStore(reducers, createState());
+  const reducers = createReducers();
+  const initialState = createState();
+  console.log('| REDUCERS |', reducers, initialState);
+  const store = createStore(reducers, initialState);
   return store;
 }

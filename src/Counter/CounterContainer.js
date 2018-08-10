@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CounterDisplay from "./CounterDisplay";
-import { increment } from '../redux/actions';
+import { increment, fetchImage } from '../redux/actions/index';
 
 class CounterContainer extends React.Component {
-  async componentDidMount() {
+  componentDidMount() {
     setInterval(() => {
       this.props.incrementCounter();
     }, 2000);
+    setInterval(() => {
+      this.props.fetchDogImage();
+    }, 10000);
   }
   render() {
     const { counter } = this.props;
@@ -24,7 +27,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementCounter: () => dispatch(increment())
+  incrementCounter: () => dispatch(increment()),
+  fetchDogImage: () => dispatch(fetchImage()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
