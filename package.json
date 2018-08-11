@@ -39,6 +39,8 @@
   },
   "dependencies": {
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "redux-seamless-immutable": "^0.4.0"
   }
 }
