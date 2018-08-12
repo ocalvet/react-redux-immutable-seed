@@ -4,7 +4,7 @@ export default () => {
   return Immutable({
     counter: 0,
     image: {
-      fetching: false,
+      fetching: true,
       error: '',
     },
   });

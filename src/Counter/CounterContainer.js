@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { increment, fetchImage } from '../redux/actions/index';
 import CounterDisplay from "./CounterDisplay";
 import ImageDisplay from "./ImageDisplay";
+import loadingImage from '../../assets/loading.gif';
 
 class CounterContainer extends React.Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class CounterContainer extends React.Component {
     const { counter, image } = this.props;
     return (
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        {image.fetching ? <span>loading...</span> : <ImageDisplay image={image} /> }
+        {image.fetching ? <img src={loadingImage} /> : <ImageDisplay image={image} /> }
         <CounterDisplay count={counter} />
       </div>
     );
