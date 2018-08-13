@@ -6,7 +6,12 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|gif|ttf|woff|woff2)$": "identity-obj-proxy"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,7 @@
   "homepage": "https://github.com/ocalvet/react-redux-immutable-seed#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -30,10 +36,12 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.4.2",
     "seamless-immutable": "^7.1.3",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
