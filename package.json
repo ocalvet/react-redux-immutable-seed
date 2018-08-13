@@ -24,6 +24,12 @@
     "url": "https://github.com/ocalvet/react-redux-immutable-seed/issues"
   },
   "homepage": "https://github.com/ocalvet/react-redux-immutable-seed#readme",
+  "dependencies": {
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "redux-seamless-immutable": "^0.4.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.4.2",
@@ -46,11 +52,5 @@
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
-  },
-  "dependencies": {
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-saga": "^0.16.0",
-    "redux-seamless-immutable": "^0.4.0"
   }
 }
